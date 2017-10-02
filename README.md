@@ -5,10 +5,10 @@ The apache directory listing is a great technique to buffer you files over the i
 ### There are few cahnges that have to be made to the apache server that yoou are running.
 
 >## Apache.conf
-	In this file, which is located in "/etc/apache2/", change the permissions of directory (default is "/var/www/") to the directory of your choice (Example: "/home/myName/")
+In this file, which is located in "/etc/apache2/", change the permissions of directory (default is "/var/www/") to the directory of your choice (Example: "/home/myName/")
 
 >## 000-default.conf
-	In this file, which on linux is located in "/etc/apache2/sites-available/", change the directory (default is /var/www/html) to a directory that lies inside the directory that was set while editing Apache.conf. 
+In this file, which on linux is located in "/etc/apache2/sites-available/", change the directory (default is /var/www/html) to a directory that lies inside the directory that was set while editing Apache.conf. 
 
 >## Cross-Origin Header
-	By default, Apache is configured to block the cross-origin requests, the functionality on which this app works. So to enable that, i.e, To add the CORS authorization to the header using Apache, simply add the following line inside either the <Directory>, <Location>, <Files> or <VirtualHost> sections of your server config (usually located in a *.conf file, such as httpd.conf or apache.conf), or within a .htaccess file.
+By default, Apache is configured to block the cross-origin requests, the functionality on which this app works. So to enable that, i.e, To add the CORS authorization to the header using Apache, simply add the following line inside either the <Directory>, <Location>, <Files> or <VirtualHost> sections of your server config (usually located in a *.conf file, such as httpd.conf or apache.conf), or within a .htaccess file.
