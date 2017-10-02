@@ -49,3 +49,35 @@ body{
 .invisible-table{
 	display: none;
 }
+
+form{
+	margin: auto;
+	width: 90%;
+	max-width: 600px;
+	text-align: center;
+}
+
+form .input-title{
+	padding-top: 10px;
+	padding-bottom: 5px;
+	font-size: 1em;
+}
+
+input[type="text"]{
+	padding: 10px;
+	width: 100%;
+	font-size: 1em;
+	border-radius: 2px;
+	border-width: 1px;
+	border-style: none;
+}
+
+input[type="submit"]{
+	margin-top: 20px;
+	padding: 10px;
+	width: 50%;
+	background-color: #222;
+	color: #FFF;
+	border: 0;
+	border-radius: 2px;
+}
