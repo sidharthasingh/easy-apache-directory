@@ -1,0 +1,47 @@
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-color: #EEF;
+}
+.header{
+	text-align: center;
+	width: 100%;
+	background-color: #358CCE;
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+}
+.header h2{
+	margin:0 auto;
+	padding: 15px;
+	color: #FFF;
+}
+.footer{
+	position: fixed;
+	left: 0%;
+	width: 100%;
+	bottom: 0%;
+	padding: 8px;
+	text-align: center;
+	background-color: #358CCE;
+}
+
+.footer > .footnote {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.footer > .footnote a{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.view{
+	padding-top: 3.5em;
+	padding-bottom: 2em;
+	background-color: #EEF;
+	width: 100%;
+	margin:0;
+}
