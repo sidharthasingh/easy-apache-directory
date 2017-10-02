@@ -61,10 +61,16 @@ else
 				obj.src = temp[0].src;
 				tempParse = $.parseHTML(temp[1].innerHTML)[0]; 
 				obj.href = tempParse.href;
-				obj.text = tempParse.innerText;
+				obj.text = tempParse.innerText.replace("/","");
 				src = obj.src = obj.src.replace(window.location.origin,"");
 				href = obj.href = obj.href.replace(window.location.origin,"");
-				if(src.indexOf("folder.gif")==-1)
+				if(paraString[paraString.length-1] == "/")
+					paraString = paraString.substr(0,paraString.length-1);
+				if(src.indexOf("back.gif")!=-1)
+				{
+					href =  "javascript:window.history.back()";
+				}
+				else if(src.indexOf("folder.gif")==-1)
 				{
 					href = paraString+href;
 				}
@@ -78,13 +84,13 @@ else
 
 			}
 			console.log(dat);
-			table ="<table>"
+			table ="";
 			for(i=0;i<dat.length;i++)
 			{
+				temp = i%2;
 				obj = dat[i];
-				table+="<tr><img src='"+obj.src+"'><a href='"+obj.href+"'>"+obj.text+"</a></tr><br>";
+				table+="<div class='file-folder"+temp+"' onclick='openFolder(this)'><img src='"+obj.src+"'><a class='list' href='"+obj.href+"'>"+obj.text+"</a></div>\n";
 			}
-			table+="</table>";
 			$("#view").html(table);
 		});
 }
@@ -96,4 +102,10 @@ function formSubmit(){
 	console.log(link);
 	window.location = window.location.origin+"/?"+link;
 	return false;
+}
+
+x="";
+function openFolder(abc)
+{
+	window.location = $.parseHTML(abc.innerHTML)[1].href;
 }
