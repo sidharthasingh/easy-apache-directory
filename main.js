@@ -22,13 +22,10 @@ function formSubmit(){
 		link = "http://"+link;
 	console.log(link);
 	$.ajax({
-    url: link,
-
-    dataType: "jsonp",
-    success: function( response ) {
-        console.log( response ); // server response
-    }
-
+		url:link,
+		crossDomain:true
+	}).done(function(data){
+		console.log(data);
 	});
 	return false;
 }
