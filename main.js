@@ -15,6 +15,41 @@ function home(){
 	window.location = "/";
 }
 
+function sortFolders(dat){
+	file = [];
+	fol = [];
+	for(i=0;i<dat.length;i++)
+	{
+		if(dat[i].src.indexOf("folder.gif") == -1 && dat[i].src.indexOf("back.gif") == -1)
+			file.push(dat[i]);
+		else
+			fol.push(dat[i]);
+	}
+	for(i=0;i<fol.length;i++)
+		dat[i] = fol[i];
+	for(i=0;i<file.length;i++)
+		dat[i+fol.length] = file[i];
+	return dat;
+}
+
+function createHtmlTable(dat)
+{
+	table ="";
+	for(i=0;i<dat.length;i++)
+	{
+		temp = i%2;
+		obj = dat[i];
+		if(obj.href.indexOf("'")!=-1)
+		{
+			// console.log(obj);
+			// obj.href = obj.href.replace("'","\\'");
+			// console.log(obj);
+		}
+		table+="<div class=\"file-folder"+temp+"\" onclick=\"openFolder(this)\"><img src=\""+obj.src+"\"><a class=\"list\" href=\""+obj.href+"\">"+obj.text+"</a></div>\n";
+	}
+	return table;
+}
+
 // Go to home by clicking on header
 $(".header").click(home);
 
@@ -91,14 +126,9 @@ else
 				dat.push(obj);
 
 			}
+			dat = sortFolders(dat);
 			console.log(dat);
-			table ="";
-			for(i=0;i<dat.length;i++)
-			{
-				temp = i%2;
-				obj = dat[i];
-				table+="<div class='file-folder"+temp+"' onclick='openFolder(this)'><img src='"+obj.src+"'><a class='list' href='"+obj.href+"'>"+obj.text+"</a></div>\n";
-			}
+			table = createHtmlTable(dat);
 			$("#view").html(table);
 		});
 }
@@ -115,5 +145,7 @@ function formSubmit(){
 x="";
 function openFolder(abc)
 {
-	window.location = $.parseHTML(abc.innerHTML)[1].href;
+	link = $.parseHTML(abc.innerHTML)[1].href;
+	console.log("Opening location : "+link);
+	window.location = link;
 }
