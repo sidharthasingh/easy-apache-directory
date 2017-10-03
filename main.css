@@ -106,3 +106,21 @@ img{
 .view{
 	margin-left: 0%;
 }
+
+.info{
+	background-color: rgba(0,0,0,0.1);
+	width: 95%;
+	text-align: center;
+	font-family: courier;
+	max-width: 900px;
+	margin: auto;
+	padding: 10px;
+}
+
+.info ul{
+	text-align: left;
+}
+
+.info ul li{
+	padding-top: 10px;
+}
