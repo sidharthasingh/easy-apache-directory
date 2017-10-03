@@ -115,6 +115,7 @@ img{
 	max-width: 900px;
 	margin: auto;
 	padding: 10px;
+	display: none;
 }
 
 .info ul{

@@ -6,6 +6,11 @@ function loadForm()
 			});
 }
 
+function loadInfo()
+{
+	$("#info").css("display","block");
+}
+
 function home(){
 	window.location = "/";
 }
@@ -17,7 +22,10 @@ $(".header").click(home);
 paraString = window.location.search; 
 
 if(paraString=="")
+{
 	loadForm();
+	loadInfo();
+}
 else
 {
 	if(paraString[0]=="?")
