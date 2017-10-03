@@ -13,8 +13,10 @@ In this file, which on linux is located in "/etc/apache2/sites-available/", chan
 >## Cross-Origin Header
 By default, Apache is configured to block the cross-origin requests, the functionality on which this app works. So to enable that, i.e, To add the CORS authorization to the header using Apache, simply add the following line inside either the <Directory>, <Location>, <Files> or <VirtualHost> sections of your server config (usually located in a *.conf file, such as httpd.conf or apache.conf), or within a .htaccess file. Or simply add this at the end of the "Apache2.conf" file.
 
-Header set Access-Control-Allow-Origin "*"
+**Header set Access-Control-Allow-Origin "*"**
 
-If you want to embed images, this is how you do it:
+*This is the screenshot of the desktop view*
+![Desktop View](/desktop.png)
 
-![Image of Yaktocat](/desktop.png)
+*This is the screenshot of the mobile view*
+![Mobile View](/mobile.png)
