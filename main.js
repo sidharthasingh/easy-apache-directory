@@ -76,6 +76,7 @@ else
 					paraString = paraString.substr(0,paraString.length-1);
 				if(src.indexOf("back.gif")!=-1)
 				{
+					continue;
 					href =  "javascript:window.history.back()";
 				}
 				else if(src.indexOf("folder.gif")==-1)
