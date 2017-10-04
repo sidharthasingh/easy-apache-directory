@@ -1,6 +1,8 @@
 body{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	background-color: #EEF;
+	/*padding: 0px;*/
+	margin: 0px;
 }
 .header{
 	text-align: center;

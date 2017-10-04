@@ -39,12 +39,6 @@ function createHtmlTable(dat)
 	{
 		temp = i%2;
 		obj = dat[i];
-		if(obj.href.indexOf("'")!=-1)
-		{
-			// console.log(obj);
-			// obj.href = obj.href.replace("'","\\'");
-			// console.log(obj);
-		}
 		table+="<div class=\"file-folder"+temp+"\" onclick=\"openFolder(this)\"><img src=\""+obj.src+"\"><a class=\"list\" href=\""+obj.href+"\">"+obj.text+"</a></div>\n";
 	}
 	return table;
